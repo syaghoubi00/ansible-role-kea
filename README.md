@@ -12,7 +12,12 @@ None.
 
 ## Role Variables
 
+`kea_install_method: package` - The method to install `kea`, currently only
+`package` is implemented.
+
 ## Dependencies
+
+`syaghoubi00.epel` - To add EPEL in EL distros to get the package.
 
 ## Example Playbook
 
