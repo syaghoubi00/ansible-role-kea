@@ -2,7 +2,8 @@
   when: kea_install_method == 'package'
   block:
     - name: Add EPEL repo for EL distros
-      ansible.builtin.include_role: syaghoubi00.epel
+      ansible.builtin.include_role:
+        name: syaghoubi00.epel
       when:
         - ansible_os_family == 'RedHat'
         # NOTE: Major version will avoid 'Fedora'
