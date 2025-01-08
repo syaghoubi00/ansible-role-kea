@@ -1,5 +1,4 @@
-dependencies:
-  - role: syaghoubi00.epel
+dependencies: []
 galaxy_info:
   author: syaghoubi00
   description: Install Kea
