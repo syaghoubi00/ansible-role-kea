@@ -17,7 +17,21 @@ An Ansible role to install [Kea](https://kea.isc.org/) ([Gitlab](https://gitlab.
 
 **As a standalone role**:
 
-`ansible-galaxy role install syaghoubi00.kea`
+I was unable to import the role to `ansible-galaxy` because the branch
+handling was broken, so just use the `git` repo. Additionally, I don't think
+`ansible-galaxy` allows the role to be named when doing
+`ansible-galaxy role install`, so a `requirements.yaml` file is needed.
+
+`requirements.yaml`
+
+```yaml
+roles:
+  - name: syaghoubi00.kea
+    src: https://github.com/syaghoubi00/ansible-role-kea
+    version: role
+```
+
+`ansible-galaxy role install -r requirements.yaml`
 
 ## Platforms
 
@@ -38,10 +52,20 @@ None.
 
 ## Example Playbook
 
+Using the `syaghoubi00.homelab` collection:
+
 ```yaml
 - hosts: dhcp_servers
   roles:
     - syaghoubi00.homelab.kea
+```
+
+Using the standalone role after installing it (instructions above):
+
+```yaml
+- hosts: dhcp_servers
+  roles:
+    - syaghoubi00.kea
 ```
 
 ## License
